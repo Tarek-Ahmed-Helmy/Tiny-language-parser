@@ -17,7 +17,6 @@ def scan(code):
     codeLine = 1
     state = 'start'
     token = ""
-    ERROR = ["syntax error : in line " + str(codeLine) + ", unexpected token"]
     code_length = len(code)
     passed = False
     while i < code_length:
@@ -25,14 +24,14 @@ def scan(code):
         if state == 'start':
             if char == '\n':
                 if code[i - 1] == ';' and passed:
-                    return ERROR
+                    return ["syntax error : in line " + str(codeLine) + ", unexpected token"], False
 
                 if code[i - 1] == ';' or code[i - 1] == '}' or passed:
                     codeLine += 1
                     passed = False
 
                 else:
-                    return ERROR
+                    return ["syntax error : in line " + str(codeLine) + ", unexpected token"], False
 
             elif char == '\n':
                 codeLine += 1
@@ -56,7 +55,7 @@ def scan(code):
                 if char in special_chars:
                     tokens_type.append(special_chars[char])
                 else:
-                    return ERROR
+                    return ["syntax error : in line " + str(codeLine) + ", unexpected token"], False
             i += 1
 
         elif state == 'in_comment':
@@ -94,7 +93,7 @@ def scan(code):
                 tokens.append(':=')
                 tokens_type.append('ASSIGN')
             else:
-                return ERROR
+                return ["syntax error : in line " + str(codeLine) + ", unexpected token"], False
             state = 'start'
             i += 1
 
@@ -102,7 +101,7 @@ def scan(code):
     for x, y in zip(tokens, tokens_type):
         print(x, ",", y)
         tokens_list.append([x, y])
-    return tokens_list
+    return tokens_list, True
 
 
 sourceCode = []
@@ -117,12 +116,17 @@ result = scan(''.join(sourceCode))
 outputTokens = open("Tokens.txt", "w")
 outputTokens.write('')
 outputTokens = open("Tokens.txt", "a")
-for line in result:
-    comma = True
-    for element in line:
-        outputTokens.write(str(element))
-        if comma:
-            outputTokens.write(' , ')
-            comma = False
-    outputTokens.write('\n')
+if result[1]:
+    for line in result[0]:
+        comma = True
+        for element in line:
+            outputTokens.write(str(element))
+            if comma:
+                outputTokens.write(' , ')
+                comma = False
+        outputTokens.write('\n')
+else:
+    print(''.join(result[0]))
+    outputTokens.write(''.join(result[0]))
+
 outputTokens.close()
