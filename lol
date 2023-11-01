@@ -63,7 +63,6 @@ def scan(code):
         elif state == 'in_comment':
             if char == '}':
                 state = 'start'
-
             i += 1
 
         elif state == 'in_identifier':
@@ -135,14 +134,23 @@ while True:
     else:
         codeee.append(user_input+'\n')
 
+result=scan(''.join(codeee))
+print(result)
+gg = open("output.txt", "w")
+gg.write('')
+gg = open("output.txt", "a")
 
-print(scan(''.join(codeee)))
+for line in result:
+    gg.write(str(line))
+    gg.write('\n')
+gg.close()
+
 
 #print(scan(codee.strip()))
 
 
 """
-{Sample program in TINY language - computes factorial}
+{Sl
 read x; {input an integer}
 if 0 < x then  {don't compute if x <= 0}
     fact := 1;
