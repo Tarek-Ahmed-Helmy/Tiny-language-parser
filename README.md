@@ -1,2 +1,7 @@
-# CW-Spaces
-A website that groups the coworking spaces in one place and organize their reservations and schedules.
+# Tiny-language-parser
+Desktop application of a Tiny parser with recursive descent method using Python and pyqt5.
+
+## Notes
+* Parsing is the task of determining the syntax, or structure, of a program. It is called syntax analysis.
+* In TINY there are two basic kinds of structures: statements and expressions.
+* There are five kinds of statements (if-statements, repeat-statements, assign-statements, read-statements, and write-statements) and three kinds of expressions (operator-expression, constant expressions, and identifier expressions).
