@@ -1,0 +1,72 @@
+QPushButton{
+	background-color: #31304D;
+    color: #B6BBC4;
+    font:  12pt;
+}
+
+QMainWindow{
+	background-color: #B6BBC4;
+}
+
+QMessageBox {
+    background-color:  #B6BBC4;
+}
+
+QLabel{
+	color: #31304D;
+	font:  15pt;
+}
+
+QScrollBar:vertical{
+	background: #453a3c;
+
+}
+QScrollBar::handle:verticle 
+{
+    background: #6e5e60;
+ 
+} 
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background:none;
+}
+QScrollBar::add-page:verticle, QScrollBar::sub-page:verticle {
+    background:none;
+}
+QScrollBar:horizontal{
+	background: #453a3c;
+
+}
+QScrollBar::handle:horizontal 
+{
+    background: #6e5e60;
+    
+}    
+
+QScrollBar::add-line:horizontal {
+      border: none;
+      background: none;
+}
+
+QScrollBar::sub-line:horizontal {
+      border: none;
+      background: none;
+}
+QScrollBar::add-line:verticle {
+      border: none;
+      background: none;
+}
+
+QScrollBar::sub-line:verticle {
+      border: none;
+      background: none;
+}
+
+
+QTextEdit
+{
+	background:   #31304D;
+	border: 1pt;
+	color: white;
+	font: 13pt;
+}
