@@ -1,6 +1,7 @@
 from typing import List
 
 from tiny_parser import Parser
+from scanner import scan
 import gui
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QFileDialog
@@ -45,13 +46,17 @@ class appGui(QtWidgets.QMainWindow):
             self.showdialog('No tokens found!')
         else:
             try:
-                tokens = text.split('\n')
-                tokens_list = []
-                for i in tokens:
-                    row = i.split(',')
-                    row[0] = row[0].strip()
-                    row[1] = row[1].strip()
-                    tokens_list.append(row)
+                if self.ui.radioButton.isChecked():
+                    tokens_list = scan(text)
+
+                elif self.ui.radioButton_2.isChecked():
+                    tokens = text.split('\n')
+                    tokens_list = []
+                    for i in tokens:
+                        row = i.split(',')
+                        row[0] = row[0].strip()
+                        row[1] = row[1].strip()
+                        tokens_list.append(row)
 
                 parser = Parser(tokens_list)
                 parser.stmt_sequence()

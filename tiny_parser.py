@@ -104,6 +104,10 @@ class Parser:
         else:
             raise Exception("No match found")
 
+        if self.match("ELSE"):
+            else_node = self.stmt_sequence()
+            self.syntax_tree.add_edge(pydot.Edge(if_node, else_node, style="dotted"))
+
         if not self.match("END"):
             raise Exception("No match found")
 

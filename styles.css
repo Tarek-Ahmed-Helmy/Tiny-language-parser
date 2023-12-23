@@ -17,13 +17,14 @@ QLabel{
 	font:  15pt;
 }
 
+
 QScrollBar:vertical{
-	background: #453a3c;
+	background: #B6BBC4;
 
 }
 QScrollBar::handle:verticle 
 {
-    background: #6e5e60;
+    background: #31304D;
  
 } 
 
@@ -37,11 +38,11 @@ QScrollBar:horizontal{
 	background: #453a3c;
 
 }
-QScrollBar::handle:horizontal 
+QScrollBar::handle:horizontal
 {
     background: #6e5e60;
-    
-}    
+
+}
 
 QScrollBar::add-line:horizontal {
       border: none;
@@ -73,5 +74,6 @@ QTextEdit
 
 
 QRadioButton{
+    color: #31304D;
     font: 12pt
 }
