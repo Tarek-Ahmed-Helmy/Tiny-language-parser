@@ -70,3 +70,8 @@ QTextEdit
 	color: white;
 	font: 13pt;
 }
+
+
+QRadioButton{
+    font: 12pt
+}
