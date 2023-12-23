@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\gui.ui'
+# Form implementation generated from reading ui file 'gui2.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -9,15 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 from ParseTree import Ui_ParseTree
 
-
 class Ui_MainWindow(object):
-    def setupUi(self, mainWindow):
-        mainWindow.setObjectName("MainWindow")
-        mainWindow.resize(764, 601)
-        self.centralwidget = QtWidgets.QWidget(mainWindow)
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(707, 571)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
@@ -29,6 +27,12 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setObjectName("label")
         self.verticalLayout_5.addWidget(self.label)
+        self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton.setObjectName("radioButton")
+        self.verticalLayout_5.addWidget(self.radioButton)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.verticalLayout_5.addWidget(self.radioButton_2)
         spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.verticalLayout_5.addItem(spacerItem)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -63,30 +67,33 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.pushButton_2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
+        self.verticalLayout_5.addLayout(self.horizontalLayout)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout.addWidget(self.pushButton, 0, QtCore.Qt.AlignBottom)
-        self.verticalLayout_5.addLayout(self.horizontalLayout)
-        mainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(mainWindow)
+        self.verticalLayout_5.addWidget(self.pushButton)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
-        mainWindow.setStatusBar(self.statusbar)
+        MainWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(mainWindow)
-        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, mainWindow):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        mainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Enter Tokens List here or upload the file.txt :"))
-        self.pushButton_2.setText(_translate("MainWindow", "Upload Tokens File"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Tiny-Language-Parser"))
+        self.label.setText(_translate("MainWindow", "Enter either Tiny Code or Tokens List here:"))
+        self.radioButton.setText(_translate("MainWindow", "Tiny Code"))
+        self.radioButton_2.setText(_translate("MainWindow", "Tokens List"))
+        self.pushButton_2.setText(_translate("MainWindow", "UPLOAD FILE"))
         self.pushButton.setText(_translate("MainWindow", "RUN"))
 
+
     def openWindow(self):
-        self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_ParseTree()
-        self.ui.setupUi(self.window)
-        self.window.show()
+            self.window = QtWidgets.QMainWindow()
+            self.ui = Ui_ParseTree()
+            self.ui.setupUi(self.window)
+            self.window.show()
 
 
 if __name__ == "__main__":
